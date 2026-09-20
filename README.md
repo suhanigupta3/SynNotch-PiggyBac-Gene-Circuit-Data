@@ -1,4 +1,4 @@
-# SynNotch-PiggyBac Gene Circuit — computational analysis
+# SynNotch-PiggyBac gene circuit: computational analysis
 
 Code and outputs supporting the computational analysis in Section 4 of:
 
@@ -9,7 +9,7 @@ Code and outputs supporting the computational analysis in Section 4 of:
 
 No human or animal data were used. Every record analysed here is **simulated**.
 The analysis is an illustrative, fully specified workflow for a candidate
-outcome measure — it is not evidence that the proposed circuit produces any
+outcome measure. It is not evidence that the proposed circuit produces any
 effect. Section 4.4 of the article states the limits of what it can support.
 
 ---
@@ -46,8 +46,8 @@ frontoparietal electrode set.
 ### What was tried to recover the original values
 
 `src/recover.py` tests fourteen seed conventions a person would plausibly have
-written — `default_rng(i)` over several offsets, per-group indexing, and the
-legacy `RandomState` API — and accepts a scheme only if it reproduces *all four*
+written: `default_rng(i)` over several offsets, per-group indexing, and the
+legacy `RandomState` API. A scheme is accepted only if it reproduces *all four*
 published quantities at once. None does. Across all fourteen, the significant
 pair count falls in 47–53 and the median effect size in 2.60–3.72. The
 published 58 lies outside that range and the published 2.34 below all of it, so
