@@ -11,6 +11,7 @@ pairs carry a white border; red and blue edges mark increases and decreases,
 with width scaled to effect magnitude.
 """
 
+import io
 import json
 
 import numpy as np
@@ -119,9 +120,23 @@ def main():
     panel_a(axes[0], stats["diff"], stats["reject"])
     panel_b(axes[1], stats["diff"], stats["reject"], stats["d"], clf)
     fig.tight_layout()
-    for ext in ("png", "pdf"):
-        fig.savefig("results/figure2.%s" % ext, dpi=300, bbox_inches="tight")
-    print("wrote results/figure2.png and results/figure2.pdf")
+    fig.savefig("results/figure2.pdf", bbox_inches="tight")
+    fig.savefig("results/figure2.png", dpi=300, bbox_inches="tight")
+    # TIFF at 600 dpi with LZW compression, for journal submission. It is
+    # rendered through a memory buffer and flattened onto white, then written as
+    # RGB: an alpha channel is not wanted in a submitted TIFF and some
+    # production systems mishandle it.
+    from PIL import Image
+    Image.MAX_IMAGE_PIXELS = None
+    buf = io.BytesIO()
+    fig.savefig(buf, format="tiff", dpi=600, bbox_inches="tight")
+    buf.seek(0)
+    with Image.open(buf) as im:
+        flat = Image.new("RGB", im.size, (255, 255, 255))
+        flat.paste(im, mask=im.split()[-1] if im.mode == "RGBA" else None)
+        flat.save("results/figure2.tif", format="TIFF",
+                  compression="tiff_lzw", dpi=(600, 600))
+    print("wrote results/figure2.pdf, .png and .tif")
 
 
 if __name__ == "__main__":

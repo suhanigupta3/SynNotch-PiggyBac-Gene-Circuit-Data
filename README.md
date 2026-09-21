@@ -97,7 +97,7 @@ results/
   coherence_features.npy   48 x 171 feature matrix
   labels.npy               0 = sham, 1 = treatment-simulated
   pair_labels.txt          the 171 electrode pair names, in order
-  figure2.png / .pdf       Figure 2
+  figure2.pdf / .png / .tif  Figure 2 (TIFF is 600 dpi RGB, for submission)
 ```
 
 ## Reproducing
