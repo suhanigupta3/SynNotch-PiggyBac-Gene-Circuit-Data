@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "SynNotch-PiggyBac gene circuit: computational analysis"
+abstract: >-
+  Analysis code and outputs supporting the Section 4 computational analysis of
+  Gupta and Gupta (2026), Frontiers in Aging Neuroscience. Contains the EEG
+  simulation, the coherence and statistics pipeline, the leave-one-out
+  classification workflow, the Figure 2 script, and an independent
+  reimplementation depending on NumPy alone.
+type: software
+license: MIT
+repository-code: "https://github.com/suhanigupta3/SynNotch-PiggyBac-Gene-Circuit-Data"
+authors:
+  - family-names: Gupta
+    given-names: Suhani
+    affiliation: "Neuro Health Alliance, Dublin, CA, United States"
+  - family-names: Gupta
+    given-names: Ronav
+    affiliation: "IGNITE Pathways, Dublin, CA, United States"
+preferred-citation:
+  type: article
+  title: >-
+    A SynNotch-PiggyBac gene circuit for inflammation-responsive IL-10 delivery
+    in Alzheimer's disease: a hypothesis and design framework
+  authors:
+    - family-names: Gupta
+      given-names: Suhani
+    - family-names: Gupta
+      given-names: Ronav
+  journal: "Frontiers in Aging Neuroscience"
+  year: 2026
+  volume: 18
+  doi: "10.3389/fnagi.2026.1866161"

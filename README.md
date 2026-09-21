@@ -112,7 +112,7 @@ python src/cross_check.py   # NumPy implementation vs SciPy/scikit-learn
 ```
 
 `validate.py` and `analysis.py` need NumPy alone. `reference_impl.py`,
-`cross_check.py` and `figure2.py` additionally need SciPy, scikit-learn and
+`cross_check.py` and `figure2.py` also need SciPy, scikit-learn and
 Matplotlib.
 
 Runtime is about 30 seconds for `analysis.py` and about 90 seconds for
